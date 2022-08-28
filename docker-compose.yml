@@ -1,0 +1,51 @@
+version: '3.7'
+
+services:
+  backend:
+    image: server
+    container_name: backend
+    restart: always
+    build: ./backend
+    ports:
+      - '3000:3000'
+    #env_file: ./backend/.env
+    environment:
+     - SERVER_INITDB_ROOT_ADMINUSERNAME=Admin
+     - SERVER_INITDB_ROOT_ADMINPASSWORD=TestDB22
+    depends_on:
+      - db
+    networks:
+      - mern-app
+  frontend:
+    image: client
+    container_name: frontend
+    restart: unless-stopped
+    build: ./frontend
+    #environment:
+      #- REACT_APP_SERVER=http://localhost:3001
+    ports:
+      - '3001:3001'
+    depends_on:
+      - backend
+    networks:
+      - mern-app
+    entrypoint: ["yarn", "start"]
+  db:
+    container_name: mongodb
+    image: mongo
+    restart: unless-stopped
+    environment:
+      #MONGO_INITDB_DATABASE: backend
+      - MONGO_INITDB_ROOT_USERNAME=Admin
+      - MONGO_INITDB_ROOT_PASSWORD=TestDB22
+    ports:
+    - '27017:27017'
+    networks:
+      - mern-app
+networks:
+  mern-app:
+    driver: bridge  
+
+
+
+

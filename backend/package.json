@@ -1,0 +1,27 @@
+{
+  "name": "masterthesis_backend",
+  "version": "2.0.0",
+  "description": "masterthesis",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon -L server.js localhost 3000"
+  },
+  "author": "Eya kaabar",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.14",
+    "mongoose-unique-validator": "^2.0.3",
+    "multer": "^1.4.4",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.15",
+    "shortid": "^2.2.16"
+  },
+  "devDependencies": {}
+
+}
