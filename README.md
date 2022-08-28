@@ -1,5 +1,5 @@
 # Project:
-implementation of a web application to test the news management’s skill of user
+Implementation of a web application to test the news management’s skill of user
 
 ## 1. Backend:
     For our server layer we opted for a Node.js Express web application framework to develop web CORS Middleware: 
@@ -13,11 +13,11 @@ implementation of a web application to test the news management’s skill of use
         5. Conception and Implementation And will allow us to create, delete, get objects in our database.
 
 ## 2. Frontend:
-     Made up of 2 differents Folders grouping the corresponding components for both the Admin as well as the user spaces
+     Made up of 2 differents Folders grouping the corresponding React-components for both the Admin as well as the user's spaces
 
 
 ## 3. Containerization:
      Containerize our code using Docker in order to enable any other person to easily deploy the applications:
-     - Dockerfile for each of folder: frontend and backend
+     - Dockerfile for each of folders: frontend and backend
      - Docker-compose.yml
 
